@@ -19,7 +19,6 @@ APIBANXICO/
 🔧 Cómo ejecutar localmente
 1. Crear el entorno Conda:
 
-```bash
 conda env create -f environment.local.yml
 conda activate banxico
 
