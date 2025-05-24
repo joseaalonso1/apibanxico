@@ -1,25 +1,33 @@
 # API Banxico: Tasa Real Ex-Ante
 
-Este proyecto obtiene y visualiza la **tasa de interés real ex-ante** usando datos públicos de Banxico a través de su API. Incluye:
-
-- Script en Python (`code/exante_real_rate.py`)
-- Aplicación interactiva con Streamlit (`code/app.py`)
-- Botón para descarga en CSV
-- Cálculo de reducción esperada por junta
+Esta aplicación permite visualizar y calcular la **tasa real ex-ante de corto plazo en México** mediante datos públicos de Banxico consumidos vía API. Utiliza una interfaz en **Streamlit**, y permite elegir fechas, observar tasas objetivo vs. expectativas, y descargar los resultados.
 
 ---
 
-## 📦 Requisitos
+## 📁 Estructura del proyecto
 
-- Python 3.11
-- Cuenta en [https://streamlit.io](https://streamlit.io)
+├── code/ # Código fuente principal
+│ ├── app.py # Aplicación en Streamlit (interfaz)
+│ └── exante_real_rate.py # Script base con lógica y procesamiento
+├── data/ # Carpeta para guardar CSV descargado
+├── .env # Token API de Banxico (cargado desde dotenv)
+├── .gitignore # Archivos y carpetas excluidas de git
+├── environment.local.yml # Entorno Conda reproducible para uso local
+├── README.md # Documentación del proyecto
 
 ---
 
-## 🔧 Cómo usar localmente (con Conda)
+## 🔧 Cómo ejecutar localmente
+
+1. Crear el entorno Conda:
 
 ```bash
-conda env create -f environment.yml
+conda env create -f environment.local.yml
 conda activate banxico
-streamlit run code/app.py
 
+No se usa requirements.txt: este proyecto está optimizado para entorno local con conda.
+No se especifica una versión exacta de matplotlib, pero se recomienda 3.7.x por compatibilidad con entornos donde versiones superiores presentan conflictos.
+El archivo .env se excluye automáticamente gracias al .gitignore.
+## app
+
+https://apibanxico-exante.streamlit.app
